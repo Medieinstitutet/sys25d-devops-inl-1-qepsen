@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
  
 export default defineConfig({
-  base: '/https://github.com/Medieinstitutet/sys25d-devops-inl-1-qepsen.git',
+  base: '/sys25d-devops-inl-1-qepsen',
   test: {
     environment: 'node',
   },
