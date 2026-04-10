@@ -1,0 +1,115 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text: #1e293b;
+  --muted: #64748b;
+  --deduction: #ef4444;
+  --addition: #16a34a;
+  --border: #e2e8f0;
+  --radius: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+header h1 { font-size: 2rem; font-weight: 700; }
+.subtitle { color: var(--muted); margin-top: 0.4rem; }
+
+main {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+
+.input-card label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+}
+input[type="number"] {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .2s;
+}
+input[type="number"]:focus { border-color: var(--primary); }
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+button:hover { background: var(--primary-hover); }
+
+/* Result card */
+.result-card h2 { font-size: 1.1rem; color: var(--muted); margin-bottom: 1rem; }
+
+.net-highlight {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background: #eff6ff;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.net-highlight .label { font-weight: 600; font-size: 1rem; }
+.net-highlight .amount { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+
+.breakdown { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.breakdown td { padding: 0.45rem 0.25rem; }
+.breakdown td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.breakdown tr { border-bottom: 1px solid var(--border); }
+.breakdown tr:last-child { border-bottom: none; }
+.breakdown .deduction td:last-child { color: var(--deduction); }
+.breakdown .addition td:last-child { color: var(--addition); }
+.breakdown .total td { font-weight: 700; }
+.breakdown .rate td { color: var(--muted); font-size: 0.88rem; }
+
+.hidden { display: none; }
+
+footer {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
