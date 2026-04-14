@@ -106,10 +106,3 @@ button:hover { background: var(--primary-hover); }
 .breakdown .rate td { color: var(--muted); font-size: 0.88rem; }
 
 .hidden { display: none; }
-
-footer {
-  margin-top: 2.5rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-align: center;
-}

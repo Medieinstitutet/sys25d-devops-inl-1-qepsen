@@ -5,7 +5,7 @@ const app = document.getElementById('app')
 app.innerHTML = `
   <header>
     <h1>Salary Calculator</h1>
-    <p class="subtitle">Calculate your take-home pay after tax (Sweden 2024)</p>
+    <p class="subtitle">Calculate your take-home pay after tax</p>
   </header>
 
   <main>
@@ -44,9 +44,6 @@ app.innerHTML = `
     </section>
   </main>
 
-  <footer>
-    <p>Simplified flat rates. Exact figures depend on your municipality and personal situation.</p>
-  </footer>
 `
 
 const fmt = (n) =>
