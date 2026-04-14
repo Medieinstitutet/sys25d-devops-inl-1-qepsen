@@ -18,19 +18,19 @@ jobs:
     name: Unit tests (Vitest)
     runs-on: ubuntu-latest
     steps:
-      - name: Checka ut koden
+      - name: Check out the code
         uses: actions/checkout@v4
 
-      - name: Sätt upp Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Installera beroenden
+      - name: Install dependencies
         run: npm ci
 
-      - name: Kör enhetstester
+      - name: Run unit tests
         run: npm run test
 
   build:
@@ -38,37 +38,37 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Checka ut koden
+      - name: Check out the code
         uses: actions/checkout@v4
 
-      - name: Sätt upp Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Installera beroenden
+      - name: Install dependencies
         run: npm ci
 
-      - name: Bygg produktionsversion
+      - name: Build production bundle
         run: npm run build
 
-      - name: Konfigurera GitHub Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Ladda upp dist/ som Pages-artefakt
+      - name: Upload dist/ as Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    name: Deploy → GitHub Pages
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Publicera till GitHub Pages
+      - name: Publish to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

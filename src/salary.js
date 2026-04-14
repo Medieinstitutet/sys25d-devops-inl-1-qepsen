@@ -3,7 +3,6 @@ export function municipalTax(grossSalary) {
   return grossSalary * 0.32
 }
 
-
 export function stateTax(grossSalary) {
   if (grossSalary < 0) throw new Error('Salary cannot be negative')
   const THRESHOLD = 51158
@@ -11,18 +10,15 @@ export function stateTax(grossSalary) {
   return (grossSalary - THRESHOLD) * 0.20
 }
 
-
 export function pensionFee(grossSalary) {
   if (grossSalary < 0) throw new Error('Salary cannot be negative')
   return grossSalary * 0.07
 }
 
-
 export function jobTaxDeduction(grossSalary) {
   if (grossSalary < 0) throw new Error('Salary cannot be negative')
   return grossSalary * 0.13
 }
-
 
 export function netSalary(grossSalary) {
   if (grossSalary < 0) throw new Error('Salary cannot be negative')
@@ -33,7 +29,6 @@ export function netSalary(grossSalary) {
     jobTaxDeduction(grossSalary)
   return Math.round(grossSalary - tax)
 }
-
 
 export function salaryBreakdown(grossSalary) {
   if (grossSalary < 0) throw new Error('Salary cannot be negative')

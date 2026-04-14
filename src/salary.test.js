@@ -8,7 +8,6 @@ import {
   salaryBreakdown,
 } from './salary.js'
 
-
 describe('municipalTax', () => {
   it('calculates 32% of gross salary', () => {
     expect(municipalTax(30000)).toBe(9600)
@@ -23,9 +22,8 @@ describe('municipalTax', () => {
   })
 })
 
-
 describe('stateTax', () => {
-  it('returns 0 when salary is below the threshold (51 158 kr)', () => {
+  it('returns 0 when salary is below the threshold (51 158 SEK)', () => {
     expect(stateTax(40000)).toBe(0)
   })
 
@@ -42,7 +40,6 @@ describe('stateTax', () => {
   })
 })
 
-
 describe('pensionFee', () => {
   it('calculates 7% of gross salary', () => {
     expect(pensionFee(30000)).toBe(2100)
@@ -53,7 +50,6 @@ describe('pensionFee', () => {
   })
 })
 
-
 describe('jobTaxDeduction', () => {
   it('calculates 13% of gross salary', () => {
     expect(jobTaxDeduction(30000)).toBe(3900)
@@ -63,7 +59,6 @@ describe('jobTaxDeduction', () => {
     expect(jobTaxDeduction(0)).toBe(0)
   })
 })
-
 
 describe('netSalary', () => {
   it('returns gross when salary is 0', () => {
@@ -78,7 +73,7 @@ describe('netSalary', () => {
     expect(netSalary(35000)).toBeGreaterThan(0)
   })
 
-  it('net salary is higher for 60 000 kr than for 30 000 kr', () => {
+  it('net salary is higher for 60 000 SEK than for 30 000 SEK', () => {
     expect(netSalary(60000)).toBeGreaterThan(netSalary(30000))
   })
 
